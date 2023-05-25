@@ -71,7 +71,7 @@ def api_response(r):
     if r.status_code != 200:
         r.raise_for_status()
 
-    xmldoc = parse_xml_string(r.text)
+    xmldoc = parse_xml_string(r.content)
 
     err = check_error(xmldoc.documentElement)
     if err:
